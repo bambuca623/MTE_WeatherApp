@@ -1,33 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+    <TextView
+        android:id="@+id/cityText"
+        style="?android:attr/textAppearanceMedium"
+        android:layout_width="118dp"
+        android:layout_height="58dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    <TextView
+        android:id="@+id/condDescr"
+        android:layout_width="111dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/windDeg"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/windLab" />
 
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_main" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+    <TextView
+        android:id="@+id/temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_alignBaseline="@id/condDescr"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toRightOf="@id/condDescr"
+        />
 
-</android.support.design.widget.CoordinatorLayout>
+    <TextView
+        android:id="@+id/pressLab"
+        android:layout_width="82dp"
+        android:layout_height="29dp"
+        android:layout_below="@id/condDescr"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="56dp"
+        android:text="Pressure"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityText" />
+
+    <TextView
+        android:id="@+id/press"
+        android:layout_width="115dp"
+        android:layout_height="31dp"
+        android:layout_alignBaseline="@id/pressLab"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toRightOf="@id/pressLab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.275"
+        app:layout_constraintStart_toEndOf="@+id/pressLab"
+        app:layout_constraintTop_toBottomOf="@+id/condIcon" />
+
+    <TextView
+        android:id="@+id/humLab"
+        android:layout_width="wrap_content"
+        android:layout_height="47dp"
+        android:layout_below="@id/pressLab"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="24dp"
+        android:text="Humidity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pressLab" />
+
+    <TextView
+        android:id="@+id/hum"
+        android:layout_width="114dp"
+        android:layout_height="40dp"
+        android:layout_alignBaseline="@id/humLab"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toRightOf="@id/humLab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/humLab"
+        app:layout_constraintTop_toBottomOf="@+id/press" />
+
+    <TextView
+        android:id="@+id/windLab"
+        android:layout_width="70dp"
+        android:layout_height="37dp"
+        android:layout_below="@id/humLab"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:text="Wind"
+        app:layout_constraintEnd_toStartOf="@+id/windSpeed"
+        app:layout_constraintHorizontal_bias="0.697"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/humLab" />
+
+    <TextView
+        android:id="@+id/windSpeed"
+        android:layout_width="121dp"
+        android:layout_height="44dp"
+        android:layout_alignBaseline="@id/windLab"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="68dp"
+        android:layout_toRightOf="@id/windLab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hum" />
+
+    <TextView
+        android:id="@+id/windDeg"
+        android:layout_width="82dp"
+        android:layout_height="44dp"
+        android:layout_alignBaseline="@id/windLab"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="84dp"
+        android:layout_toRightOf="@id/windSpeed"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/windSpeed" />
+
+    <ImageView
+        android:id="@+id/condIcon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.198"
+        app:layout_constraintStart_toEndOf="@+id/cityText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>
