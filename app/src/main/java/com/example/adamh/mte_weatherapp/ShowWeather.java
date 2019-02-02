@@ -91,7 +91,7 @@ public class ShowWeather extends AppCompatActivity {
                 case "09d": imageResource = getResources().getIdentifier("drawable/img09d", null, ShowWeather.PACKAGE_NAME); break;
                 case "09n": imageResource = getResources().getIdentifier("drawable/img09d", null, ShowWeather.PACKAGE_NAME); break;
                 case "10d": imageResource = getResources().getIdentifier("drawable/img10d", null, ShowWeather.PACKAGE_NAME); break;
-                case "10n": imageResource = getResources().getIdentifier("drawable/img10d", null, ShowWeather.PACKAGE_NAME); break;
+                case "10n": imageResource = getResources().getIdentifier("drawable/img10n", null, ShowWeather.PACKAGE_NAME); break;
                 case "11d": imageResource = getResources().getIdentifier("drawable/img11d", null, ShowWeather.PACKAGE_NAME); break;
                 case "11n": imageResource = getResources().getIdentifier("drawable/img11d", null, ShowWeather.PACKAGE_NAME); break;
                 case "13d": imageResource = getResources().getIdentifier("drawable/img13d", null, ShowWeather.PACKAGE_NAME); break;
