@@ -21,18 +21,22 @@ public class MapWeather {
             con.setDoInput(true);
             con.setDoOutput(true);
             con.connect();
+            if(con.getResponseCode() == 404) {
+                System.out.println("city not found");
+                return "incorrect city";
+            }
+            else {
+                StringBuffer buffer = new StringBuffer();
+                is = con.getInputStream();
+                BufferedReader br = new BufferedReader(new InputStreamReader(is));
+                String line = null;
+                while ((line = br.readLine()) != null)
+                    buffer.append(line + "rn");
 
-            // Let's read the response
-            StringBuffer buffer = new StringBuffer();
-            is = con.getInputStream();
-            BufferedReader br = new BufferedReader(new InputStreamReader(is));
-            String line = null;
-            while ( (line = br.readLine()) != null )
-                buffer.append(line + "rn");
-
-            is.close();
-            con.disconnect();
-            return buffer.toString();
+                is.close();
+                con.disconnect();
+                return buffer.toString();
+            }
         }
         catch(Throwable t) {
             t.printStackTrace();
@@ -44,5 +48,4 @@ public class MapWeather {
 
         return null;
     }
-
 }
