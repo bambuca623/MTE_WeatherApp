@@ -66,7 +66,7 @@ public class ShowWeather extends AppCompatActivity {
         protected Weather doInBackground(String... params) {
             Weather weather = new Weather();
             String data = ((new MapWeather()).getWeatherData(params[0]));
-            if(data == "incorrect city") {
+            if(data == "Incorrect city" || data == null) {
                 return null;
             }
             else {
@@ -85,7 +85,7 @@ public class ShowWeather extends AppCompatActivity {
             super.onPostExecute(weather);
             if (weather == null)
             {
-                System.out.println("incorrect city");
+                System.out.println("Incorrect city");
                 cityText.setText("City not found");
             }
             else {
